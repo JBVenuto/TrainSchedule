@@ -42,6 +42,48 @@ $(document).ready(function() {
         console.log(newBus.destination);
         console.log(newBus.firstBus);
         console.log(newBus.frequency);
+
+        //Clear the input boxes
+        $("#busName").val("");
+        $("#destination").val("");
+        $("#firstBus").val("");
+        $("#frequency").val("");
+    })
+
+    //Use the data from firebase to populate the table
+    database.ref().on("child_added", function(childSnapshot) {
+        console.log(childSnapshot.val());
+        console.log(childSnapshot.val().name);
+        console.log(childSnapshot.val().destination);
+        console.log(childSnapshot.val().firstBus);
+        console.log(childSnapshot.val().frequency);
+        
+        //Make variables based on the data in firebase
+        var busName = childSnapshot.val().name;
+        var busDestination = childSnapshot.val().destination;
+        var firstTime = childSnapshot.val().firstBus;
+        var busFrequency = childSnapshot.val().frequency;
+
+        console.log(busName);
+        console.log(busDestination);
+        console.log(firstTime);
+        console.log(busFrequency);
+        //find the next arrival time for the bus
+
+
+        //find out how many minutes away the next bus is
+
+        //Add a row and populate the table
+        var newRow = $("<tr>").append(
+            $("<td>").text(busName),
+            $("<td>").text(busDestination),
+            $("<td>").text(firstTime),
+            $("<td>").text(busFrequency),
+            $("<td>").text(busName),
+        );
+
+        //Append the new row to the table
+        $("#bus-table > tbody").append(newRow);
     })
 
 })
