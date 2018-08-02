@@ -6,9 +6,26 @@ var config = {
     projectId: "train-schedule-da3eb",
     storageBucket: "train-schedule-da3eb.appspot.com",
     messagingSenderId: "909853333161"
-  };
+};
 
-  firebase.initializeApp(config);
+firebase.initializeApp(config);
 
-  //Create a variable that holds the firebase data
-  var database = firebase.database();
+//Create a variable that store the firebase data
+var database = firebase.database();
+
+$(document).ready();
+
+//Variables to store user input
+$(document).on("click", "#input", function(event) {
+    event.preventDefault();
+    console.log("button works");
+    var busName = $("#busName").val().trim();
+    var destination = $("#destination").val().trim();
+    var firstBus = $("#firstBus").val().trim();
+    var frequency = $("#frequency").val().trim();
+    
+    console.log(busName);
+    console.log(destination);
+    console.log(firstBus);
+    console.log(frequency);
+})
