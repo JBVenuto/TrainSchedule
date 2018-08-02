@@ -3,7 +3,7 @@
 
     <head>
         <meta charset="utf-8">
-        <title>Train Schedule</title>
+        <title>LYNX Schedule</title>
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
         <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
         <script src="https://www.gstatic.com/firebasejs/5.3.0/firebase.js"></script>
@@ -39,8 +39,23 @@
                       Add Bus
                     </div>
                     <div class="card-body">
-                      <h5 class="card-title">Special title treatment</h5>
-                      <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
+                      <h6 class="card-title">Bus Name:</h5>
+                      <p class="card-text">
+                        <input class="form-control" id="busName" type="text" placeholder="Bus Name">
+                      </p>
+                      <h6 class="card-title">Destination</h5>
+                        <p class="card-text">
+                          <input class="form-control" id="destination" type="text" placeholder="Destination">
+                      </p>
+                      <h6 class="card-title">First Train Time (HH:mm - military time)</h5>
+                        <p class="card-text">
+                            <input class="form-control" id="firstBus" type="text" placeholder="First Bus">
+                        </p>
+                      <h6 class="card-title">Frequency (min)</h5>
+                      <p class="card-text">
+                            <input class="form-control" id="frequency" type="text" placeholder="Frequency">
+                      </p>
+                      <button type="submit" class="btn font-weight-bold" style=background-color:yellow>Submit</button>
                     </div>
                   </div>
         </div>
