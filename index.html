@@ -28,8 +28,19 @@
                       Current Bus Schedule
                     </div>
                     <div class="card-body">
-                      <h5 class="card-title">Special title treatment</h5>
-                      <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
+                        <table class="table table-sm table-hover" id='employee-table'>
+                          <thead>
+                            <tr>
+                              <th scope="col">Bus Name</th>
+                              <th scope="col">Destination</th>
+                              <th scope="col">Frequency (min)</th>
+                              <th scope="col">Next Arrival</th>
+                              <th scope="col">Minutes Away</th>
+                            </tr>
+                          </thead>
+                          <tbody>
+                          </tbody>
+                        </table>
                     </div>
                   </div>
 
@@ -49,13 +60,13 @@
                       </p>
                       <h6 class="card-title">First Train Time (HH:mm - military time)</h5>
                         <p class="card-text">
-                            <input class="form-control" id="firstBus" type="text" placeholder="First Bus">
+                            <input class="form-control" id="firstBus" type="text" placeholder="00:00">
                         </p>
                       <h6 class="card-title">Frequency (min)</h5>
                       <p class="card-text">
-                            <input class="form-control" id="frequency" type="text" placeholder="Frequency">
+                            <input class="form-control" id="frequency" type="text" placeholder="mins">
                       </p>
-                      <button type="submit" class="btn font-weight-bold" style=background-color:yellow>Submit</button>
+                      <button type="submit" class="btn font-weight-bold text-white" style=background-color:#EC008C>Submit</button>
                     </div>
                   </div>
         </div>
