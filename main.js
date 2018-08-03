@@ -68,18 +68,32 @@ $(document).ready(function() {
         console.log(busDestination);
         console.log(firstTime);
         console.log(busFrequency);
-        //find the next arrival time for the bus
 
+        //Math to find times
+        //Subtract a year from the first bus time
+        var convertedTime = moment(firstTime, "HH:mm").subtract(1, "years");
+        console.log(convertedTime);
+        //Find the difference in minutes between the current time and the first train
+        var diffTime = moment().diff(moment(convertedTime), "minutes")
+        console.log("Time difference: " + diffTime);
+        //Minutes since the last bus
+        var lastBus = diffTime % busFrequency;
+        console.log("Mins since last bus: " + lastBus);
+        //Minutes until the next bus
+        var nextBus = busFrequency - lastBus;
+        console.log("mins till bus: " + nextBus);
+        //Time that the next bus will arive
+        var nextTime = moment().add(nextBus, "minutes");
+        console.log("Arrival: " + moment(nextTime).format("hh:mm"));
 
-        //find out how many minutes away the next bus is
 
         //Add a row and populate the table
         var newRow = $("<tr>").append(
             $("<td>").text(busName),
             $("<td>").text(busDestination),
-            $("<td>").text(firstTime),
             $("<td>").text(busFrequency),
-            $("<td>").text(busName),
+            $("<td>").text(nextTime.format("hh:mm")),
+            $("<td>").text(nextBus),
         );
 
         //Append the new row to the table
